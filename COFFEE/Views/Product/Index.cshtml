@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+    var listNewProducts = (List<Model.EF.Product>)ViewBag.NewProducts;
+    var listFeatureProducts = (List<Model.EF.Product>)ViewBag.ListFeatureProducts;
+}
+
+
+<div class="container spsanpham">
+    <div class="row">
+        @{Html.RenderAction("ProductCategory", "Product");}
+
+        <!-- ///////////////////////////////////////// Xong menu dọc ////////////////////////////////////////// -->
+
+        <div class="col-sm-9 spcottrai">
+            <h3 class="sptitle">Nổi Bật</h3>
+            <div class="spto">
+                @foreach (var item in listNewProducts)
+                {
+                    <div class="sptin">
+                        <a href="#"><img src="@item.Image" alt=""></a>
+                        <div class="sptext">
+                            <a href="#" class="sptile">@item.Name</a>
+                            <p class="spprace">@item.Price VND</p>
+                            <a href="/them-gio-hang?productID=@item.ID&quanlity=1" class="spmenuitemleft">Mua Ngay</a>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div> <!-- Xong col-sm-9 -->
+    </div> <!-- Xong row -->
+</div> <!-- Xong container -->
+
+@section jsFooter{
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="fttd">
+                        Uhouse <br />
+                        Coffe
+                    </h2>
+                </div>
+                <div class="col-sm-3">
+                    <h1 class="fttitle">About</h1>
+                    <p class="fta">
+                        Về Chúng Tôi
+                        <br />
+                        Hạt Cà Phê Uhouse Coffe
+                        <br />
+                        Blog
+                        <br />
+                        Cơ Hội Nghề Nghiệp
+                        <br />
+                        Cửa Hàng
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <h1 class="fttitle">Always-on-support</h1>
+                    <p class="fta">
+                        Delivery 1800 .... ...
+                        <br />
+                        Support +84231....
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <h1 class="fttitle fttitle1">DELIVERY</h1>
+                    <p class="fta">
+                        Shipping methods
+                        <br />
+                        Payment
+                        <br />
+                        Cash voucher
+                        <br />
+                        Return
+                        <br />
+                        Exchange
+                    </p>
+                </div>
+            </div>
+            <div class="row ftbt">
+                <div class="col-sm-12 mt-2" style="border-bottom: 1px solid white;"></div>
+                <div class="col-sm-6 mt-1">
+                    Copyright © 2020 The Coffee House. All rights reserved.
+                </div>
+                <div class="col-sm-6 mt-1">
+                    Privacy Policy Terms of Use
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ////////// Xong Footer //////////////// -->
+}

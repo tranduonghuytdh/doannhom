@@ -1,0 +1,110 @@
+﻿@model List<COFFEE.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+
+}
+
+@section jsFooter{
+
+    <script src="../assets/client/js/controller/cartController.js"></script>
+}
+<div class="container giohang">
+    <table id="cart" class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th style="width:50%">Tên sản phẩm</th>
+                <th style="width:10%">Giá</th>
+                <th style="width:10%">Số lượng</th>
+                <th style="width:22%" class="text-center">Thành tiền</th>
+                <th style="width:10%"> </th>
+            </tr>
+
+        </thead>
+        @if (Model.Count > 0)
+        {
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs">
+                                    <img src="@item.Product.Image">
+                                </div>
+                                <div class="col-sm-10 sanpham">
+                                    <h4 class="nomargin">@item.Product.Name</h4>
+                                    <p>@item.Product.Detail</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Price">@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
+                        <td data-th="Quantity">
+                            <input class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" type="number">
+                        </td>
+                        <td data-th="Subtotal" class="text-center">@((item.Product.Price.GetValueOrDefault(0) *  item.Quantity).ToString("N0")) </td>
+                        <td class="actions" data-th="">
+
+                            <button id="btnUpdate" class="btn btn-info btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button id="btn-delete" class="btn btn-danger btn-sm" data-id="@item.Product.ID">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+
+
+                    </tr>
+
+                }
+
+
+            </tbody>
+        }
+        else
+        {
+            <span class="alert alert">Chưa Có Sản Phẩm Trong Giỏ hàng</span>
+        }
+        <tfoot>          
+        </tfoot>
+        <tfoot>
+            <tr class="nohover">
+                <td>
+                    <a href="#" class="btn btn-warning nutbt" id="btnContinue">
+                        <i class="fa fa-angle-left"></i>
+                        Tiếp tục mua hàng
+                    </a>
+                    <a href="#" class="btn btn-warning nutbt" id="btnUpdate">
+                        <i class="fa fa-angle-left"></i>
+                        Cập Nhật
+                    </a>
+                    <a href="#" class="btn btn-warning nutbt" id="btnDeleteAll">
+                        <i class="fa fa-angle-left"></i>
+                        Xóa Giỏ Hàng
+                    </a>
+                    <a href="#" class="btn btn-warning nutbt" id="btnPayment">
+                        <i class="fa fa-angle-left"></i>
+                        Thanh Toán
+                    </a>
+                </td>
+                <td colspan="2" class="hidden-xs"></td>
+                <td class="ghthanhtien">
+                    <strong>Tổng tiền <span></span> VNĐ</strong>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-success btn-block nutbt">Thanh toán <i class="fa fa-angle-right"></i></a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+        @*<div class="bottom adjoined-top">
+            <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+            <button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
+            <button id="btnDeleteAll" class="btn">Xoá giỏ hàng</button>
+            <button id="btnPayment" class="btn">Thanh toán</button>
+        </div>*@
+
+
+
+</div>

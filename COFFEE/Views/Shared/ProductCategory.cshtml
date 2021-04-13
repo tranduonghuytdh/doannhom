@@ -1,0 +1,15 @@
+﻿@model List<Model.EF.ProductCategory>
+<div class="col-sm-3">
+    <ul class="list-group">
+        <div class="alert alert-primary" role="alert">
+            <a href="#" class="spdanhmuc"><strong>Danh mục sản phẩm</strong></a>
+        </div>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item spbt">
+                <a href="index.html">@item.Name</a>
+            </li>
+        }
+
+    </ul>
+</div>

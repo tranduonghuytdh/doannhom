@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+    var listNewProducts = (List<Model.EF.Product>)ViewBag.NewProducts;
+}
+
+@section slide{
+
+    <div class="slidewrapper">
+        <div class="cacslide">
+            <ul>
+                <li class="active">
+                    <!-- đặt một class để hiện thị 1 slide còn lại thì ẩn đi -->
+                    <div class="motslide">
+                        <div class="anh1"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="motslide">
+                        <div class="anh2"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="motslide">
+                        <div class="anh3"></div>
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- Xong phần cacslide -->
+
+        <div class="chuyenslide">
+            <ul>
+                <li class="kichhoat" id="khoi"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div> <!-- Xong phần slide -->
+    </div> <!-- Bọc slide và nút chuyển slide -->
+
+}
+@section jsFooter{
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="fttd">
+                        Uhouse <br />
+                        Coffe
+                    </h2>
+                </div>
+                <div class="col-sm-3">
+                    <h1 class="fttitle">About</h1>
+                    <p class="fta">
+                        Về Chúng Tôi
+                        <br />
+                        Hạt Cà Phê Uhouse Coffe
+                        <br />
+                        Blog
+                        <br />
+                        Cơ Hội Nghề Nghiệp
+                        <br />
+                        Cửa Hàng
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <h1 class="fttitle">Always-on-support</h1>
+                    <p class="fta">
+                        Delivery 1800 .... ...
+                        <br />
+                        Support +84231....
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <h1 class="fttitle fttitle1">DELIVERY</h1>
+                    <p class="fta">
+                        Shipping methods
+                        <br />
+                        Payment
+                        <br />
+                        Cash voucher
+                        <br />
+                        Return
+                        <br />
+                        Exchange
+                    </p>
+                </div>
+            </div>
+            <div class="row ftbt">
+                <div class="col-sm-12 mt-2" style="border-bottom: 1px solid white;"></div>
+                <div class="col-sm-6 mt-1">
+                    Copyright © 2020 The Coffee House. All rights reserved.
+                </div>
+                <div class="col-sm-6 mt-1">
+                    Privacy Policy Terms of Use
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ////////// Xong Footer //////////////// -->
+}

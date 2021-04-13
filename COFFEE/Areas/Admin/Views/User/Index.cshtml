@@ -1,0 +1,67 @@
+﻿@model PagedList.IPagedList<Model.EF.User>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_layouts.cshtml";
+}
+
+@section header{
+    Quản Lý Người Dùng
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Danh Sách  Người Dùng
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>1. Tên Tài Khoản</th>
+                                <th>2. Tên Người Dùng</th>
+                                <th>3. Địa Chỉ</th>
+                                <th>4. Phone</th>
+                                <th>5. Email</th>
+                                <th>6. Ngày Tạo</th>
+                                <th>7. Trạng Thái</th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr id=row_@item.ID>
+                                    <td>@item.UserName</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Address</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.CreateDate</td>
+                                    <td>@item.Status</td>
+                                    <td>
+                                        <a href="/Admin/User/Edit/@item.ID">Cập Nhật</a>
+                                        ||||
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                        {
+                                       Confirm = "Bạn Có Muốn Xóa Bản ghi này ?",
+                                       OnComplete = "$('row_" + item.ID + "').  ()",
+                                       HttpMethod = "Delete"
+                                   })
+                                    </td>
+
+                                </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

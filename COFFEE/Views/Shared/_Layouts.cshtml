@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title> CDIO-4 </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="~/assets/client1/vendor/bootstrap.css" />
+        <link rel="stylesheet" href="~/assets/client1/vendor/font-awesome.css" />
+        <script src="~/assets/client1/jquery/jquery-1.12.3.js"></script>
+        <script src="~/assets/client1/js/reload.js"></script>
+        <link rel="stylesheet" href="~/assets/client1/css/index.css" />
+        <link href="~/assets/client1/css/sanpham.css" rel="stylesheet" />
+        <link href="~/assets/client1/css/giohang.css" rel="stylesheet" />
+        <script src="~/assets/client1/js/sp.js"></script>
+    
+
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light navbar-fixed-top menutop">
+        <div class="container">
+            <div class="collapse navbar-toggleable-xs" id="menutren">
+                <a class="navbar-brand logo" href="#">
+                    <a href="#" class="name">Uhouse Coffee</a>
+                </a>
+                <ul class="nav navbar-nav float-sm-right">
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="#">
+                                Câu Chuyện
+                            </a>
+                            <div class="layer1">
+                                <ul class=layer_1>
+                                    <li>
+                                        <a href="#">VỀ THE COFFEE HOUSE</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">TRÁCH NHIỆM CỘNG ĐỒNG</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Thông cáo báo chí</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="#">
+                                Chuyện Cà Phê
+                            </a>
+                            <div class="layer1">
+                                <ul class=layer_1>
+                                    <li>
+                                        <a href="#">Hành trình từ nông trại đến ly cà phê</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Hạt cà phê the coffee house</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nghệ thuật pha chế</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Workshop cà phê</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Truy xuất nguồn gốc</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang sp" href="/home-master">
+                                Trang Chủ
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="/san-pham">
+                                Sản Phẩm
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="/gio-hang">
+                                Giỏ Hàng
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="/dang-nhap">
+                                Đăng Nhập
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="/dang-ky">
+                                Đăng Ký
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="/lien-he">
+                                Liên Hệ
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="all">
+                            <a class="nav-link ngang" href="/lien-he">
+                                Lịch Sử Mua Hàng
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    @RenderSection("slide", required: false)
+
+
+    <!-- ////////////////// Xong Header -->
+    <!-- ////////////////////////////////////// Menu Sản Phẩm ///////////////////////////////// -->
+
+    @RenderBody() <!-- Xong nen -->
+    @*@{Html.RenderAction("HeaderCart", "Home"); }*@
+    <!-- ///////////////////////// Xong Menu Sản Phẩm -->
+    <!-- //////////////////////// Footer //////////////// -->
+    
+    @RenderSection("jsFooter", required: false)
+    <!-- ////////// Xong Footer //////////////// -->
+    <script type="text/javascript" src="~/assets/client1/js/index.js"></script>
+    <script src="~/assets/client1/query/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="~/assets/client1/js/index.js"></script>
+
+
+</body>
+</html>
